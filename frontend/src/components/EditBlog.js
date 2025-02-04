@@ -17,7 +17,7 @@ const EditBlog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/blogs/${id}`);
+        const res = await axios.get(`https://mern-blog-app-api-sxag.onrender.com/api/blogs/${id}`);
         setBlog(res.data);
       } catch (err) {
         console.error(err);
@@ -37,7 +37,7 @@ const EditBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/blogs/${id}`, blog);
+      await axios.put(`https://mern-blog-app-api-sxag.onrender.com/api/blogs/${id}`, blog);
       toast.success('Blog updated successfully');
       navigate('/');
     } catch (err) {
