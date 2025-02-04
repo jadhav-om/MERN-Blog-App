@@ -9,7 +9,7 @@ const BlogList = () => {
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      const res = await axios.get('http://localhost:5000/api/blogs');
+      const res = await axios.get('https://mern-blog-app-api-sxag.onrender.com/api/blogs');
       setBlogs(res.data);
     };
     fetchBlogs();
@@ -17,7 +17,7 @@ const BlogList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/blogs/${id}`);
+      await axios.delete(`https://mern-blog-app-api-sxag.onrender.com/api/blogs/${id}`);
       setBlogs(blogs.filter(blog => blog._id !== id));
       toast.success('Post deleted'); // Show toast notification
     } catch (err) {
