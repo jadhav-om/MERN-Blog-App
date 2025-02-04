@@ -13,7 +13,7 @@ const BlogForm = () => {
     e.preventDefault();
     const blog = { title, image, description };
     try {
-      await axios.post('http://localhost:5000/api/blogs', blog);
+      await axios.post('https://mern-blog-app-api-sxag.onrender.com/api/blogs', blog);
       navigate('/');
     } catch (err) {
       console.error(err);
